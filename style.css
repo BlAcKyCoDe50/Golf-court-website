@@ -36,17 +36,19 @@ html{
     border-radius: 70%;
     position: fixed;
     pointer-events: none;
+    transition: transform 0.2s ease, background-color 0.2s ease; 
 }
 
 #cursor-blur
 {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     background-color: #65c11eb1;
     border-radius: 50%;
     position: fixed;
     filter: blur(70px); 
     z-index: 9;
+    transition: transform 0.2s ease, opacity 0.2s ease; 
 }
 
 #nav img
@@ -64,7 +66,6 @@ video{
     object-fit: cover;
     z-index: -1;
     position: fixed;
-    
 }
 
 #main{
@@ -117,7 +118,7 @@ video{
 }
 
 #page2{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     z-index: 10;
 }
@@ -197,12 +198,14 @@ video{
     width: 260px;
     border-radius: 20px;
     object-fit: cover;
+    z-index: 10;
 }
 
 #about-us-in
 {
     width: 50%;
     text-align: center;
+    z-index: 10;
 }
 
 #about-us-in h3
@@ -247,34 +250,153 @@ video{
 
 #cards-container
 {
-    background-color: red;
+    /* background-color: red; */
     height: 60vh;
     display: flex ;
     align-items: center;
     justify-content: space-evenly;
     gap: 70px;
+    padding-left: -20px;
+    position: relative;
+    z-index: 10; /*here the z-index play the role when our greein marker 
+    goes on to the top of the image*/
 }
 
 .card
 {
     height: 90%;
-    background-color: blue;
+    /* background-color: blue; */
     width: 27%;
     border-radius: 20px;
+    overflow: hidden;
+    transition: all ease 0.5s;
+    /* perspective: 1000px;  */
 }
 
 #card1
 {
-    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
-    
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);   
+    /* height: 500px;
+    width: 550px; */
 }
 
 #card2
 {
     background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+    /* height: 500px;
+    width: 550px; */
 }
 
 #card3
 {
     background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+    /* height: 500px;
+    width: 550px; */
 }
+
+#card1, #card2, #card3 {
+    background-size: cover; /* Ensure the background image covers the entire element */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating of the background image */
+/* Set the height for the element */
+}
+
+.overlay
+{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1, 1, 0, 0.953);
+    padding-top: 150px;
+    padding: 40px;
+    opacity: 0;
+    transition: all ease 0.5s 
+}
+
+.overlay h4{
+    color: rgb(191, 32, 32);
+    font-size: 50px;
+    font-weight: 700;
+    /* white-space: nowrap; */
+    margin-bottom: 30px;
+}
+
+.overlay p{
+    color: rgb(255, 255, 254);
+    font-size: 20px;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+    
+}
+
+.card p {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    padding-bottom: 50px;
+    transform: translate(-50%, -50%) rotate3d(0, 1, 0, -180deg); /* Counter-rotate the text */
+    color: white;
+    transition: transform 0.6s;
+    /* font-size: 24px; */
+}
+
+.card h4 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate3d(0, 1, 0, -180deg); /* Counter-rotate the text */
+    transition: transform 0.6s;
+}
+
+
+.card:hover{
+    transform: rotate3d(0, 1, 0, 180deg);
+    transition: transform 0.6s;
+}
+
+#green-div
+{
+    height: 300px;
+    width: 100%;
+    background-color: #33A834;
+    z-index: 10;
+}
+
+#green-div #img1,#img2
+{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg);
+    height: 300px;
+    width: 12%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+#green-div #img1
+{
+    left: 0;
+}
+
+#green-div #img2
+{
+    right: 0;
+}
+
+#green-div h4
+{
+    font-weight: 1100;
+    color: black;
+    width: 50%;
+    padding-left: 500px;
+    z-index: 10;
+    padding-top: 100px;
+    text-align: center;
+    line-height: 33px;
+    font-size: 26px;
+   /* font-size: large; */
+
+}
+
+
