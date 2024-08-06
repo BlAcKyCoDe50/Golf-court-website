@@ -26,7 +26,7 @@ gsap.to("#nav",{
 });
 
 gsap.to('#main',{
-    // backgroundColor : "#000",
+    backgroundColor : "#000",
     scrollTrigger:{
         trigger:"#main",
         scroller:"body",
@@ -37,4 +37,73 @@ gsap.to('#main',{
     }
 })
 
+
+gsap.from("#about-us img,#about-us-in",{ //for about us animation
+    y:90,
+    opacity : 0,
+    duration : 1.5,
+    // stagger : 0.4,
+    scrollTrigger:{
+        trigger :"#about-us",
+        scroller:"body",
+        // markers: true,
+        start : "top 60%",
+        end : "top 58%",
+        scrub:1
+    }
+})
+
+gsap.from(".card",{  //for cards animation
+    scale:0.8,
+    opacity : 0,
+    duration : 0.5,
+    // stagger : 0.4,
+    scrollTrigger:{
+        trigger :".card",
+        scroller:"body",
+        // markers: true,
+        start : "top 60%",
+        end : "top 58%",
+        scrub:2
+    }
+})
+
+gsap.from("#col1",{
+    y:-70,
+    x:-70,
+    scrollTrigger:{
+        trigger:"#col1",
+        scroller:"body",
+        // markers:true,
+        start:"top 45%",
+        end:"top 45%",
+        scrub:4,
+    }
+})
+
+gsap.from("#col2",{
+    y:70,
+    x:70,
+    scrollTrigger:{
+        trigger:"#col1",
+        scroller:"body",
+        // markers:true,
+        start:"top 45%",
+        end:"top 45%",
+        scrub:4,
+    }
+})
+
+// gsap.from("#page4 h1",{
+//     y:50,
+//     scrollTrigger:{
+//         trigger:"#page4 h1",
+//         scroller:"body",
+//         // markers:true,
+//         start:"top 45%",
+//         end:"top 45%",
+//         scrub:4,
+//     }
+
+// })
 
