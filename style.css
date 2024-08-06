@@ -29,6 +29,10 @@ html{
     z-index: 99;
 }
 
+#nav a{
+    text-decoration: none;
+}
+
 #cursor{
     height: 20px;
     width: 25px;
@@ -350,53 +354,73 @@ video{
 }
 
 
-.card:hover{
+.card:hover
+{
     transform: rotate3d(0, 1, 0, 180deg);
     transition: transform 0.6s;
 }
 
 #green-div
 {
-    height: 300px;
-    width: 100%;
-    background-color: #33A834;
-    z-index: 10;
-}
-
-#green-div #img1,#img2
-{
-    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg);
-    height: 300px;
-    width: 12%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-}
-
-#green-div #img1
-{
-    left: 0;
-}
-
-#green-div #img2
-{
-    right: 0;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #21A338, #A2D220 );
 }
 
 #green-div h4
 {
-    font-weight: 1100;
-    color: black;
     width: 50%;
-    padding-left: 500px;
-    z-index: 10;
-    padding-top: 100px;
+    font-size: 27px;
+    line-height: 50px;
+    font-weight: 1000;
+    color: black;
     text-align: center;
-    line-height: 33px;
-    font-size: 26px;
-   /* font-size: large; */
+    text-transform: uppercase;
+}
 
+#green-div img
+{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+
+#page3
+{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3>p
+{
+    font-size: 35px;
+    font-weight: 900;
+    width: 60%;
+    text-align: center;
+}
+
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+
+#page3 #col1
+{
+    left: 13%;
+    top: 24%;
+}
+
+#page3 #col2
+{
+    right: 13%;
+    bottom: 24%;
 }
 
 
